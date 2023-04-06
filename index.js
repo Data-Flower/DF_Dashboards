@@ -17,8 +17,27 @@ app.get('/', (req, res) => {
 });
 
 app.get('/dynamic-page', (req, res) => {
-    const message = 'This is some dynamic content!';
-    res.render('dynamic-page', { message });
+    const data = {
+        name: 'Johns',
+        lst: [4, 8, 15, 16, 23, 42, 50, 100]
+    };
+
+    const env = {
+        nodeParent: 'body',
+        nodeTag: 'div',
+        nodeId: 'chart',
+        nodeClassName: '',
+
+        width: 400,
+        height: 600,
+        pWidth: 40,
+        xInterval: 1,
+        pHeight: 5,
+        graphColor: 'steelblue',
+    }
+
+    // const message = 'This is some dynamic content!';
+    res.render('dynamic-page', { data, env });
 });
 
 app.listen(3000, () => {
