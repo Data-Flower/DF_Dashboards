@@ -40,6 +40,14 @@ app.get('/dynamic-page', (req, res) => {
     res.render('dynamic-page', { data, env });
 });
 
+app.get('/p3', (req, res) => {
+    res.render('p3');
+});
+
+app.get('/p4', (req, res) => {
+    res.render('p4_zoom_with_axis');
+});
+
 app.listen(3000, () => {
     console.log('Server started on port 3000');
 });
